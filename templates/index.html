@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h3>Incompleted Tasks</h3>
+<table style align="center">
+    <thead>
+        <tr>
+            <th>Task ID</th>
+            <th>Task</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in incomplete%}
+            <tr>
+                <td style = "text-transform:uppercase;">{{task["taskid"]}}</td>
+                <td>{{task["task"]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table><br>
+<h3>Completed Tasks</h3>
+<table style align="center">
+    <thead>
+        <tr>
+            <th>Task ID</th>
+            <th>Task</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in complete%}
+            <tr>
+                <td style = "text-transform:uppercase;">{{task["taskid"]}}</td>
+                <td>{{task["task"]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table><br>
+
+{% endblock %}
